@@ -5,7 +5,7 @@
 .Linux: Ensure curl and git are present
 [source]
 ----
-apt-get update && apt-get install --yes curl git
+apt-get update && apt-get install --yes curl git bash-completion xz-utils
 ----
 
 
