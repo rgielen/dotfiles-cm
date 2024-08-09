@@ -31,6 +31,12 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/rgielen/
 
 ## Optional: Install DevBox
 
+.Install nix (Linux single-user!)
+[source]
+----
+curl -L https://nixos.org/nix/install | NIX_INSTALLER_NO_MODIFY_PROFILE="true" sh -s -- --no-daemon
+----
+
 .Install devbox
 [source]
 ----
