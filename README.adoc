@@ -1,0 +1,30 @@
+# DotFiles ChezMoi Edition
+
+## Quick setup
+
+.Linux: Ensure curl and git are present
+[source]
+----
+apt-get update && apt-get install --yes curl git
+----
+
+
+.Install Starship as root (eg. in container)
+[source]
+----
+curl -sS https://starship.rs/install.sh | sh -s -- --yes
+----
+
+or
+
+.Install Starship with sudo
+[source]
+----
+curl -sS https://starship.rs/install.sh | sudo sh -s -- --yes
+----
+
+.Install chezmoi and apply dotfiles
+[source]
+----
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/rgielen/dotfiles-cm
+----
