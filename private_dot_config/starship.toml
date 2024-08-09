@@ -1,4 +1,4 @@
-format = "$os$all$java$package$kubernetes$line_break$status$direnv$shell$sudo$character"
+format = "$os$shell$all$java$package$kubernetes$line_break$status$direnv$sudo$character"
 add_newline = true
 command_timeout = 500000
 
@@ -33,7 +33,7 @@ symbol = " "
 disabled = true
 
 [directory]
-format = '|  [$path]($style)[$read_only]($read_only_style)'
+format = '   [$path]($style)[$read_only]($read_only_style)'
 read_only = " 󰌾"
 truncation_symbol = '…/'
 
@@ -170,6 +170,7 @@ format = ' | [$symbol$state](bold blue)'
 [nodejs]
 symbol = " "
 format = ' | [$symbol($version)]($style)'
+disabled = true
 
 [ocaml]
 symbol = " "
@@ -260,10 +261,11 @@ symbol = " "
 disabled = true
 
 [shell]
-bash_indicator = " "
-zsh_indicator = ""
-#zsh_indicator = "⚡"
+bash_indicator = ' \$'
+#zsh_indicator = ""
+zsh_indicator = " ⚡"
 format = '[$indicator]($style)'
+style = 'green bold'
 disabled = false
 
 [status]
