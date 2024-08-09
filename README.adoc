@@ -2,34 +2,30 @@
 
 ## Quick setup
 
-.Linux: Ensure curl and git are present
+### Prepare
+
+.Linux: Ensure basic packages are installed
 [source]
 ----
-$(command -v sudo) apt-get update && $(command -v sudo) apt-get install --yes curl git bash-completion xz-utils language-pack-en
+$(command -v sudo) apt-get update && $(command -v sudo) apt-get install --yes curl git bash-completion xz-utils language-pack-en direnv sudo
 ----
 
-
-.Install Starship as root (eg. in container)
-[source]
+.Docker: Enable sudo access for user ubuntu
+[source,shell]
 ----
-curl -sS https://starship.rs/install.sh | sh -s -- --yes
+echo "ubuntu ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/ubuntu
+sudo -u ubuntu -s
 ----
 
-or
+### Starship
 
-.Install Starship with sudo
+.Install Starship
 [source]
 ----
 curl -sS https://starship.rs/install.sh | sudo sh -s -- --yes
 ----
 
-.Install chezmoi and apply dotfiles
-[source]
-----
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/rgielen/dotfiles-cm
-----
-
-## Optional: Install DevBox
+### Optional: Install DevBox
 
 .Install nix (Linux single-user!)
 [source]
@@ -41,4 +37,12 @@ curl -L https://nixos.org/nix/install | NIX_INSTALLER_NO_MODIFY_PROFILE="true" s
 [source]
 ----
 curl -fsSL https://get.jetify.com/devbox | sed -e "s|INSTALL_DIR=\".*\"|INSTALL_DIR=\"$HOME/.local/bin\"|" | sed -e "s|bash -c|-c|" | sed -e "s/sudo/bash/g" | bash -s -- --force
+----
+
+### Install and Apply chezmoi
+
+.Install chezmoi and apply dotfiles
+[source]
+----
+cd $HOME && sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/rgielen/dotfiles-cm
 ----

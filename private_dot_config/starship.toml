@@ -283,7 +283,7 @@ symbol = " "
 disabled = true
 
 [username]
-format = '[$user]($style) '
+format = ' [$user]($style) '
 
 [zig]
 symbol = " "
