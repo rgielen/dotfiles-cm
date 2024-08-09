@@ -21,6 +21,9 @@ disabled = true
 [conda]
 symbol = " "
 
+[container]
+format = ' | [$symbol \[$name\]]($style) '
+
 [crystal]
 symbol = " "
 disabled = true
