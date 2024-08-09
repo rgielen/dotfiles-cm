@@ -1,0 +1,285 @@
+format = "$os$all$java$package$kubernetes$line_break$status$direnv$shell$sudo$character"
+add_newline = true
+command_timeout = 500000
+
+[character]
+success_symbol = '[➜](bold green)'
+error_symbol = '[➜](bold red)'
+
+[aws]
+symbol = "  "
+disabled = true
+
+[buf]
+symbol = " "
+disabled = true
+
+[c]
+symbol = " "
+disabled = true
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+disabled = true
+
+[dart]
+symbol = " "
+disabled = true
+
+[directory]
+format = '|  [$path]($style)[$read_only]($read_only_style)'
+read_only = " 󰌾"
+truncation_symbol = '…/'
+
+[direnv]
+disabled = false
+symbol = ' '
+allowed_msg = ''
+not_allowed_msg = '✗'
+loaded_msg = ''
+format = '[$symbol$loaded$allowed]($style) '
+
+[docker_context]
+symbol = " "
+format = ' | [$symbol$context]($style)'
+
+[cmd_duration]
+min_time = 1000 # ms
+format = ' |  [$duration]($style)'
+style = "yellow dimmed"
+show_milliseconds = true
+
+[elixir]
+symbol = " "
+disabled = true
+
+[elm]
+symbol = " "
+disabled = true
+
+[fennel]
+symbol = " "
+disabled = true
+
+[fossil_branch]
+symbol = " "
+disabled = true
+
+[gcloud]
+disabled = true
+
+[git_branch]
+format = ' | [$symbol$branch(:$remote_branch)]($style)'
+symbol = " "
+style ="bold yellow"
+
+[git_status]
+format = '([$all_status$ahead_behind]($style))'
+ahead = " ⇡$count"
+behind = " ⇣$count"
+conflicted = " ⚠$count"
+diverged = " ⇡$ahead_count⇣$behind_count" 
+untracked = " ?$count"
+stashed = " ^$count"
+modified = " !$count"
+renamed	= ' »$count'
+deleted = " ✘$count"
+
+[golang]
+symbol = " "
+format = ' | [$symbol($version)]($style)'
+
+[gradle]
+format = ' | [$symbol($version)]($style)'
+
+[guix_shell]
+symbol = " "
+disabled = true
+
+[haskell]
+symbol = " "
+disabled = true
+
+[haxe]
+symbol = " "
+disabled = true
+
+[helm]
+format = ' | [$symbol($version)]($style)'
+
+[hg_branch]
+symbol = " "
+disabled = true
+
+[hostname]
+ssh_symbol = ""
+format = '[$ssh_symbol$hostname]($style) '
+style = "red bold"
+
+[java]
+format = ' | [${symbol}(${version} )]($style)'
+symbol = " "
+style = "magenta dimmed"
+
+[julia]
+symbol = " "
+disabled = true
+
+[kotlin]
+symbol = " "
+disabled = false
+
+[kubernetes]
+disabled = false
+format = ' | [$symbol$context( \($namespace\))]($style)'
+style = 'blue'
+symbol = "󱃾 "
+
+[kubernetes.context_aliases]
+"nuk.rgielen.com" = "nuk"
+"docker-desktop" = "🐳"
+"microk8s" = "µk8s"
+"gke_.*-(?P<cluster>[\\w-]+)" = "gke-$cluster"
+
+[lua]
+symbol = " "
+disabled = true
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+disabled = true
+
+[nim]
+symbol = "󰆥 "
+disabled = true
+
+[nix_shell]
+symbol = " "
+impure_msg = 'devbox'
+format = ' | [$symbol$state](bold blue)'
+
+[nodejs]
+symbol = " "
+format = ' | [$symbol($version)]($style)'
+
+[ocaml]
+symbol = " "
+disabled = true
+
+[os]
+disabled = false
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[package]
+format = ' | [$symbol$version]($style) '
+symbol = "󰏗 "
+style = "green dimmed"
+
+[perl]
+symbol = " "
+disabled = true
+
+[php]
+symbol = " "
+disabled = true
+
+[pijul_channel]
+symbol = " "
+disabled = true
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+disabled = true
+
+[ruby]
+symbol = " "
+disabled = true
+
+[rust]
+symbol = "󱘗 "
+disabled = true
+
+[scala]
+symbol = " "
+disabled = true
+
+[shell]
+bash_indicator = " "
+zsh_indicator = ""
+#zsh_indicator = "⚡"
+format = '[$indicator]($style)'
+disabled = false
+
+[status]
+disabled = false
+symbol = "✘"
+
+[sudo]
+disabled = false
+symbol = "󱦃 "
+format = '[$symbol]($style)'
+style = "red"
+
+[swift]
+symbol = " "
+disabled = true
+
+[username]
+format = '[$user]($style) '
+
+[zig]
+symbol = " "
+disabled = true
