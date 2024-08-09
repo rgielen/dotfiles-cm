@@ -28,3 +28,11 @@ curl -sS https://starship.rs/install.sh | sudo sh -s -- --yes
 ----
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/rgielen/dotfiles-cm
 ----
+
+## Optional: Install DevBox
+
+.Install devbox
+[source]
+----
+curl -fsSL https://get.jetify.com/devbox | sed -e "s|INSTALL_DIR=\".*\"|INSTALL_DIR=\"$HOME/.local/bin\"|" | sed -e "s|bash -c|-c|" | sed -e "s/sudo/bash/g" | bash -s -- --force
+----
