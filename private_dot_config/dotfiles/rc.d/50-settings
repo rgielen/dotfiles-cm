@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+export CURL_SSL_BACKEND="secure-transport"
+ulimit -n 65536 200000

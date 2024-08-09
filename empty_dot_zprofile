@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+## zsh specific shell configs
+## https://serverfault.com/questions/261802/what-are-the-functional-differences-between-profile-bash-profile-and-bashrc
+
+if [ -r ~/.profile ]; then
+    source ~/.profile
+fi

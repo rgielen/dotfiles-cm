@@ -1,0 +1,7 @@
+if [ -d ~/.config/dotfiles/rc.d/ ]; then
+    # Include snippets in rc.d
+    for file in ~/.config/dotfiles/rc.d/*; do
+        [ -r "$file" ] && source "$file"
+    done
+    unset file
+fi

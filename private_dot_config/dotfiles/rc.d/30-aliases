@@ -1,0 +1,105 @@
+#!/usr/bin/env bash
+
+# Navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Shortcuts
+alias g="git"
+alias h="history"
+alias l="eza -h"
+alias la="ls -lahT"
+alias ls="command ls -G"
+
+# TODO: Investigate https://unix.stackexchange.com/questions/4290/aliasing-cd-to-pushd-is-it-a-good-idea
+alias dirs="dirs -v"
+
+alias fuck='sudo $(history -p \!\!)'
+alias hgrep="history | grep "
+alias speedtest='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
+
+if command -v svn &> /dev/null; then
+    # svn: add all unversioned files
+    # https://stackoverflow.com/questions/1071857/how-do-i-svn-add-all-unversioned-files-to-svn
+    alias addall="svn add --force * --auto-props --parents --depth infinity"
+    alias svnaddall="svn add --force * --auto-props --parents --depth infinity"
+fi
+
+if command -v docker-compose &> /dev/null; then
+    alias dcomp='docker-compose'
+fi
+
+# Highlight matches for GREP
+alias grep='grep --color=auto'
+
+if command -v thefuck &> /dev/null; then
+    eval $(thefuck --alias oops)
+fi
+
+if command -v mc &> /dev/null; then
+    # Midnight Commander Speedup
+    alias mc="mc --nosubshell"
+fi
+
+# PSSH
+if command -v pssh &> /dev/null; then
+    alias pssh="pssh -OStrictHostKeyChecking=no"
+    alias psshi="pssh -OStrictHostKeyChecking=no -i"
+    alias psshh="pssh -OStrictHostKeyCh ecking=no -h"
+    alias psshih="pssh -OStrictHostKeyChecking=no -i -h"
+fi
+
+# bat integration
+if command -v bat &> /dev/null
+then
+    if command -v fzf &> /dev/null; then
+        alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+    fi
+    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+fi
+
+# fzf
+if command -v fzf &> /dev/null; then
+    alias fzq="fzf -q"
+fi
+
+# Terraform
+if command -v terraform &> /dev/null
+then
+    alias tfa="terraform apply"
+    alias tfaa="terraform apply -auto-approve"
+fi
+if command -v tofu &> /dev/null
+then
+    alias terraform="tofu"
+    alias tfa="tofu apply"
+    alias tfaa="tofu apply -auto-approve"
+fi
+
+# K8s
+alias kc=kubectl
+alias kx=kubectx
+alias kn=kubens
+
+# Enable alias autocompletion in case of bash
+if ps -p $$ | grep -q bash; then
+    complete -F __start_kubectl kc
+    complete -F _kube_contexts kx
+    complete -F _kube_namespaces kn
+fi
+
+[ -f $HOMEBREW_PREFIX/etc/profile.d/autojump.sh ] && source $HOMEBREW_PREFIX/etc/profile.d/autojump.sh
+
+if command -v rg &> /dev/null && command -v fpp &> /dev/null ; then
+    function rgf() { rg "$@" | fpp; }
+else
+    function rgf() { echo "Please install ripgrep and fpp to make this work"; }
+fi
+
+# https://twitter.com/holly_cummins/status/1540330150205612032
+# https://github.com/gbirke/oh-my-zsh-customizations/blob/b6e266078655d7c96846faaa7da7be18ea9e7a05/mkcd.zsh
+mcd() {
+    mkdir -p "$*"; cd "$*"
+}

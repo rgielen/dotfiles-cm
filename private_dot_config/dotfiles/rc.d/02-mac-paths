@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ $(uname) = "Darwin" ] ; then
+
+    # Visual Studio Code
+    if [ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]; then
+        export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+    fi
+
+fi

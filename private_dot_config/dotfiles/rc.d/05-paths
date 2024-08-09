@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+# Fabric8
+if [ -d $HOME/.fabric8/bin ]; then
+    export PATH=$PATH:$HOME/.fabric8/bin
+fi
+
+# JPM Package Manager (Liferay blade)
+if [ -d $HOME/Library/PackageManager/bin ]; then
+    export PATH=$PATH:$HOME/Library/PackageManager/bin
+fi
+
+# Go
+if [ -d "~/DevHome/go" ]; then
+    export GOPATH=$HOME/DevHome/go
+else
+    export GOPATH=$HOME/go
+    [ ! -d "$GOPATH" ] && mkdir -p "$GOPATH"
+fi
+export PATH=$PATH:${GOPATH//://bin:}/bin
+
+# Google Cloud SDK
+# The next line updates PATH for the Google Cloud SDK.
+if [ -r "$HOME/google-cloud-sdk/path.bash.inc" ]; then source "$HOME/google-cloud-sdk/path.bash.inc"; fi
+# The next line enables shell command completion for gcloud.
+if [ -r "$HOME/google-cloud-sdk/completion.bash.inc" ]; then source "$HOME/google-cloud-sdk/completion.bash.inc"; fi
+
+# Add $HOME/bin to path
+[ -d $HOME/bin ] && export PATH=$PATH:$HOME/bin
+
+# Krew
+if [ -d $HOME/.krew/bin ]; then
+    export PATH=$PATH:$HOME/.krew/bin
+fi
+
+# Pyenv
+if command -v pyenv &>/dev/null; then
+  eval "$(pyenv init --path)"
+fi
