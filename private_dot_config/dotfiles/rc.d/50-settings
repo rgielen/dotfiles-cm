@@ -8,6 +8,6 @@ if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
 fi
 
 if command -v devbox &> /dev/null; then
-    eval "$(devbox global shellenv)"
+    eval "$(devbox global shellenv --recompute)"
     source <(devbox completion $SHELL_TYPE)
 fi
