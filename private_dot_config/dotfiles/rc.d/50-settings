@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export CURL_SSL_BACKEND="secure-transport"
-ulimit -n 65536 200000
+ulimit -n 65536 -f unlimited
 
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then 
     . $HOME/.nix-profile/etc/profile.d/nix.sh; 
