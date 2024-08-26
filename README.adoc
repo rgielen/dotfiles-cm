@@ -22,21 +22,8 @@ sudo -u ubuntu -s
 .Install Starship
 [source]
 ----
+# sudo passwd $USER
 curl -sS https://starship.rs/install.sh | sudo sh -s -- --yes
-----
-
-### Optional: Install DevBox
-
-.Install nix (Linux single-user!)
-[source]
-----
-curl -L https://nixos.org/nix/install | NIX_INSTALLER_NO_MODIFY_PROFILE="true" sh -s -- --no-daemon
-----
-
-.Install devbox
-[source]
-----
-curl -fsSL https://get.jetify.com/devbox | sed -e "s|INSTALL_DIR=\".*\"|INSTALL_DIR=\"$HOME/.local/bin\"|" | sed -e "s|bash -c|-c|" | sed -e "s/sudo/bash/g" | bash -s -- --force
 ----
 
 ### Install and Apply chezmoi
@@ -46,3 +33,31 @@ curl -fsSL https://get.jetify.com/devbox | sed -e "s|INSTALL_DIR=\".*\"|INSTALL_
 ----
 cd $HOME && sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/rgielen/dotfiles-cm
 ----
+  
+### Optional: Install DevBox
+
+#### Install nix + DevBox
+
+.Install nix (Linux single-user!) and DevBox
+[source]
+----
+curl -L https://nixos.org/nix/install | NIX_INSTALLER_NO_MODIFY_PROFILE="true" sh -s -- --no-daemon --yes
+source $HOME/.nix-profile/etc/profile.d/nix.sh && nix-env -iA nixpkgs.devbox
+----
+
+.Hack: Install devbox with own installer, unattended
+[source]
+----
+curl -fsSL https://get.jetify.com/devbox | sed -e "s|INSTALL_DIR=\".*\"|INSTALL_DIR=\"$HOME/.local/bin\"|" | sed -e "s|bash -c|-c|" | sed -e "s/sudo/bash/g" | bash -s -- --force
+----
+
+#### Add some global packages, maybe?
+
+[source]
+----
+devbox global add ripgrep eza direnv
+----
+
+* https://www.jetify.com/devbox/docs/devbox_global/[Use Devbox as your Primary Package Manager]
+* https://www.jetify.com/devbox/docs/cli_reference/devbox_global_shellenv/[devbox global shellenv]
+
