@@ -282,6 +282,10 @@ style = "red"
 symbol = " "
 disabled = true
 
+[terraform]
+format = ' | [${symbol}(${version} )]($style)'
+symbol = "󱁢 "
+
 [username]
 format = ' [$user]($style) '
 
