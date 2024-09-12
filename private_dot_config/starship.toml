@@ -49,6 +49,9 @@ format = '[$symbol$loaded$allowed]($style) '
 symbol = " "
 format = ' | [$symbol$context]($style)'
 
+[dotnet]
+format = ' | [$symbol($version )(🎯 $tfm )]($style)'
+
 [cmd_duration]
 min_time = 1000 # ms
 format = ' |  [$duration]($style)'
