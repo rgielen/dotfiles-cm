@@ -14,17 +14,17 @@ if [ $(uname) = "Darwin" ] ; then
         alias jdk11="export JAVA_HOME=$(/usr/libexec/java_home -v 11)"
         alias jdk17="export JAVA_HOME=$(/usr/libexec/java_home -v 17)"
         alias jdk21="export JAVA_HOME=$(/usr/libexec/java_home -v 21)"
-        alias jdk22="export JAVA_HOME=$(/usr/libexec/java_home -v 22)"
+        alias jdk23="export JAVA_HOME=$(/usr/libexec/java_home -v 23)"
         alias mvn8="JAVA_HOME=$(/usr/libexec/java_home -v 1.8) mvn"
         alias mvn11="JAVA_HOME=$(/usr/libexec/java_home -v 11) mvn"
         alias mvn17="JAVA_HOME=$(/usr/libexec/java_home -v 17) mvn"
         alias mvn21="JAVA_HOME=$(/usr/libexec/java_home -v 21) mvn"
-        alias mvn22="JAVA_HOME=$(/usr/libexec/java_home -v 22) mvn"
+        alias mvn23="JAVA_HOME=$(/usr/libexec/java_home -v 23) mvn"
         alias mvnd8="JAVA_HOME=$(/usr/libexec/java_home -v 1.8) mvnd"
         alias mvnd11="JAVA_HOME=$(/usr/libexec/java_home -v 11) mvnd"
         alias mvnd17="JAVA_HOME=$(/usr/libexec/java_home -v 17) mvnd"
         alias mvnd21="JAVA_HOME=$(/usr/libexec/java_home -v 21) mvnd"
-        alias mvnd22="JAVA_HOME=$(/usr/libexec/java_home -v 22) mvnd"
+        alias mvnd23="JAVA_HOME=$(/usr/libexec/java_home -v 23) mvnd"
     fi
 
     export GRAALVM_HOME=$(find /Library/Java/JavaVirtualMachines -name "graalvm-21.jdk*")
