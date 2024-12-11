@@ -143,12 +143,12 @@ disabled = false
 format = ' | [$symbol$context( \($namespace\))]($style)'
 style = 'blue'
 symbol = "󱃾 "
-
-[kubernetes.context_aliases]
-"nuk.rgielen.com" = "nuk"
-"docker-desktop" = "🐳"
-"microk8s" = "µk8s"
-"gke_.*-(?P<cluster>[\\w-]+)" = "gke-$cluster"
+contexts = [
+  { context_pattern = "nuk.rgielen.com", context_alias = "nuk" },
+  { context_pattern = "docker-desktop", context_alias = "🐳" },
+  { context_pattern = "microk8s", context_alias = "µk8s" },
+  { context_pattern = "gke_.*-(?P<cluster>[\\w-]+)", context_alias = "gke-$cluster" },
+]
 
 [lua]
 symbol = " "
