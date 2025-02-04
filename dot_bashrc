@@ -25,6 +25,6 @@ command -v starship &> /dev/null && eval "$(starship init bash)"
 
 if [ -d  ~/.rd/bin ]; then
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="~/.rd/bin:$PATH"
+export PATH="$PATH:$HOME/.rd/bin"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 fi

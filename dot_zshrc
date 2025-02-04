@@ -140,8 +140,8 @@ fi
 
 command -v starship &> /dev/null && eval "$(starship init zsh)"
 
-if [ -d  ~/.rd/bin ]; then
+if [ -d  $HOME/.rd/bin ]; then
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="~/.rd/bin:$PATH"
+export PATH="$PATH:$HOME/.rd/bin"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 fi
