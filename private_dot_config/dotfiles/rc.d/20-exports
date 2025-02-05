@@ -43,3 +43,6 @@ export HISTFILESIZE=$HISTSIZE
 # Colorful LS
 export CLICOLOR=1
 export LSCOLORS=Exfxcxdxbxegedabagacad
+
+# Devbox
+export DEVBOX_NO_PROMPT=true
