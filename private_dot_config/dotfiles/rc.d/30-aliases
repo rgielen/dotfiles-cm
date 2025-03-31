@@ -102,6 +102,7 @@ fi
 # https://github.com/gbirke/oh-my-zsh-customizations/blob/b6e266078655d7c96846faaa7da7be18ea9e7a05/mkcd.zsh
 mcd() {
     mkdir -p "$*"; cd "$*"
+    cp "$HOME"/.templates/direnv/kubeconfig-currentdir.envrc .
 }
 
 # https://yazi-rs.github.io/docs/quick-start#shell-wrapper
