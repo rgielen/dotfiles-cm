@@ -142,6 +142,11 @@ fi
 
 command -v starship &> /dev/null && eval "$(starship init zsh)"
 
+# Added by LM Studio CLI (lms)
+if [ -d ~/.cache/lm-studio/bin ]; then
+    export PATH="$PATH:~/.cache/lm-studio/bin"
+fi
+
 if [ -d  $HOME/.rd/bin ]; then
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="$PATH:$HOME/.rd/bin"
