@@ -59,3 +59,8 @@ if command -v mvnd &> /dev/null && [ "${SHELL_TYPE}" = "bash" ]; then
     source <(mvnd --completion bash)
 fi
 
+# kubecm - kubeconfig manager
+# https://kubecm.cloud/
+if command -v kubecm &> /dev/null; then
+    source <(kubecm completion ${SHELL_TYPE})
+fi
