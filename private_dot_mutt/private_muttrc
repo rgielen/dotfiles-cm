@@ -1,9 +1,24 @@
 #
-# Starter muttrc file, with just a few suggestions and settings.
-#
 # This file purposely doesn't include hooks, keybinding, macros, colors, etc.
 # Read the manual, explore, and have fun!
 #
+
+###############
+# Resources
+###############
+# https://mutt.org/doc/manual/
+# https://wiki.archlinux.org/title/Mutt
+# https://developer.1password.com/docs/cli/secrets-environment-variables/
+### Send From Script:
+# https://stackoverflow.com/questions/64813656/send-mail-with-mutt-in-shell-script-file
+# https://stackoverflow.com/questions/52215007/change-from-header-using-mutt
+# https://unix.stackexchange.com/questions/108485/send-email-written-in-markdown-using-mutt
+### IMAP:
+# https://unix.stackexchange.com/questions/41589/how-to-switch-mailboxes-in-mutt
+# https://unix.stackexchange.com/questions/102829/mutt-save-message-to-specific-folder
+### Config Examples:
+# https://github.com/redondos/mutt/tree/master/.mutt
+# https://gist.github.com/kitchen/3432326
 
 source $HOMEBREW_PREFIX/opt/mutt/share/doc/mutt/samples/colors.linux
 
