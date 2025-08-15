@@ -1,0 +1,111 @@
+#
+# Starter muttrc file, with just a few suggestions and settings.
+#
+# This file purposely doesn't include hooks, keybinding, macros, colors, etc.
+# Read the manual, explore, and have fun!
+#
+
+source $HOMEBREW_PREFIX/opt/mutt/share/doc/mutt/samples/colors.linux
+
+###############
+# Identity
+#
+set realname = "René Gielen"
+set from = "rgielen@apache.org"
+my_hdr Bcc: gielen@it-neering.net
+
+# If you have another address:
+# alternates "^gielen@it-neering\.net$"
+# alternates "^rg@nrgie\.net$"
+
+# Or, if you use the entire domain:
+alternates "@rgielen\.net$"
+alternates "@gielen\.net$"
+alternates "@it-neering\.net$"
+alternates "@nrgie\.net$"
+set reverse_name
+
+###############
+set imap_user = $MAIL_USER
+set imap_pass = $MAIL_PASSWORD
+
+set smtp_url = smtp://$imap_user@$MAIL_HOST:587/
+set smtp_pass = $imap_pass
+set ssl_starttls = yes
+
+set folder = imaps://$MAIL_HOST/
+set spoolfile = "+INBOX"
+set record = "+INBOX.Sent"
+set postponed = "+Drafts"
+# set trash =
+
+set mail_check = 60
+
+## save copies of sent mail to $record
+set copy=yes
+
+set sidebar_visible = yes
+
+mailboxes !
+mailboxes <
+
+set imap_check_subscribed
+
+###############
+# Pager settings
+#
+ignore *
+unignore From Message-ID Date To Cc Bcc Subject
+
+set pager_stop
+unset markers
+
+# Prefer plain text to html.
+# However, for brain dead clients that bundle attachments inside a
+# multipart/alternative, prefer that alternative.
+alternative_order multipart/mixed multipart/related text/plain
+
+# Consult mime.types for determining types of these attachments
+mime_lookup application/octet-stream
+
+# This requires a ~/.mailcap entry with the copiousoutput flag, such as:
+# text/html; lynx -dump -width ${COLUMNS:-80} %s; nametemplate=%s.html; copiousoutput
+auto_view text/html
+
+###############
+# Index settings
+#
+set quit = ask-yes
+set sort = threads
+set sort_thread_groups = reverse-last-date
+set sort_aux=last-date-received
+
+# Remember to `mkdir -p ~/.mutt/hcache` first:
+set header_cache= "~/.mutt/hcache"
+
+###############
+# Message composition settings
+#
+set edit_headers
+
+# set editor = "emacsclient -a emacs -t"
+# set editor = "vim"
+
+set mime_type_query_command = "xdg-mime query filetype"
+
+# msmtp is a solid SMTP client.
+# mutt also has built-in SMTP, or you can use an MTA like exim4 or postfix.
+# set sendmail = "/usr/bin/msmtp"
+
+# lbdb is a versatile contact query tool.
+# Invoke via ctrl-t in an address prompt
+# set query_command = "/usr/bin/lbdbq"
+
+###############
+# GnuPG
+#
+#unset crypt_use_gpgme
+#source /usr/local/share/doc/mutt/samples/gpg.rc
+#set pgp_default_key = "0x..."
+#set crypt_opportunistic_encrypt
+#set postpone_encrypt
