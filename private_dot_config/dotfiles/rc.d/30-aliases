@@ -119,3 +119,10 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+function m {
+    export MAIL_USER="op://devops/mail_default_credential/username"
+    export MAIL_PASSWORD="op://devops/mail_default_credential/credential"
+    export MAIL_HOST="op://devops/mail_default_credential/host"
+    op run --no-masking -- mutt "$@"
+}
