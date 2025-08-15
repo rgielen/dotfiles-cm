@@ -46,3 +46,7 @@ export LSCOLORS=Exfxcxdxbxegedabagacad
 
 # Devbox
 export DEVBOX_NO_PROMPT=true
+
+# zsh autosuggestions
+# https://github.com/zsh-users/zsh-autosuggestions?tab=readme-ov-file#configuration
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=15,bg=11"
