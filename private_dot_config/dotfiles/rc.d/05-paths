@@ -36,6 +36,11 @@ if [ -d $HOME/.krew/bin ]; then
     export PATH=$PATH:$HOME/.krew/bin
 fi
 
+# LM Studio CLI (lms)
+if [ -d $HOME/.cache/lm-studio/bin ]; then
+    export PATH="$PATH:$HOME/.cache/lm-studio/bin"
+fi
+
 # Pyenv
 if command -v pyenv &>/dev/null; then
   eval "$(pyenv init --path)"
