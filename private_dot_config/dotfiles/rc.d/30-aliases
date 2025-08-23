@@ -70,8 +70,7 @@ if command -v terraform &> /dev/null
 then
     alias tfa="terraform apply"
     alias tfaa="terraform apply -auto-approve"
-fi
-if command -v tofu &> /dev/null
+elif command -v tofu &> /dev/null
 then
     alias terraform="tofu"
     alias tfa="tofu apply"
