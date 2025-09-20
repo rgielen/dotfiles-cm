@@ -125,3 +125,6 @@ function m {
     export MAIL_HOST="op://devops/mail_default_credential/host"
     op run --no-masking -- mutt "$@"
 }
+
+# API Keys
+alias openai-training='export OPENAI_API_KEY=$(op read op://devops/openai-training-250920/credential)'
