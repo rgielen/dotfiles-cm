@@ -1,0 +1,134 @@
+# This is the configuration file for Ghostty.
+#
+# This template file has been automatically created at the following
+# path since Ghostty couldn't find any existing config files on your system:
+#
+#   /Users/rene/Library/Application Support/com.mitchellh.ghostty/config
+#
+# The template does not set any default options, since Ghostty ships
+# with sensible defaults for all options. Users should only need to set
+# options that they want to change from the default.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+#
+# Ghostty can reload the configuration while running by using the menu
+# options or the bound key (default: Command + Shift + comma on macOS and
+# Control + Shift + comma on other platforms). Not all config options can be
+# reloaded while running; some only apply to new windows and others may require
+# a full restart to take effect.
+
+# Config syntax crash course
+# ==========================
+# # The config file consists of simple key-value pairs,
+# # separated by equals signs.
+# font-family = Iosevka
+# window-padding-x = 2
+#
+# # Spacing around the equals sign does not matter.
+# # All of these are identical:
+# key=value
+# key= value
+# key =value
+# key = value
+#
+# # Any line beginning with a # is a comment. It's not possible to put
+# # a comment after a config option, since it would be interpreted as a
+# # part of the value. For example, this will have a value of "#123abc":
+# background = #123abc
+#
+# # Empty values are used to reset config keys to default.
+# key =
+#
+# # Some config options have unique syntaxes for their value,
+# # which is explained in the docs for that config option.
+# # Just for example:
+# resize-overlay-duration = 4s 200ms
+
+# ============================================
+# Ghostty Terminal - Complete Configuration
+# https://x.com/dani_avila7/status/2023151176758268349?s=61
+# https://gist.githubusercontent.com/davila7/5b07f55a6e65a06c121da9702d10c2e2/raw/f5fe9fbea216bcc0339cc57f071c5e4054a7025d/ghostty_config
+# ============================================
+# File: ~/.config/ghostty/config
+# Reload: Cmd+Shift+, (macOS)
+# View options: ghostty +show-config --default --docs
+
+# --- Typography ---
+font-family = JetBrainsMonoNerdFont
+font-size = 13
+# font-thicken = true
+adjust-cell-height = 2
+
+# --- Theme and Colors ---
+# Catppuccin with automatic light/dark switching
+# theme = light:Catppuccin Latte,dark:Catppuccin Mocha
+
+# --- Window and Appearance ---
+# background-opacity = 0.9
+background-blur-radius = 20
+macos-titlebar-style = transparent
+window-padding-x = 10
+window-padding-y = 8
+window-save-state = always
+window-theme = auto
+
+# --- Cursor ---
+# cursor-style = bar
+# cursor-style-blink = true
+# cursor-opacity = 0.8
+
+# --- Mouse ---
+mouse-hide-while-typing = true
+copy-on-select = clipboard
+
+# --- Quick Terminal (Quake-style dropdown) ---
+# Activate with the global keybind configured below
+# quick-terminal-position = top
+# quick-terminal-screen = mouse
+# quick-terminal-autohide = true
+# quick-terminal-animation-duration = 0.15
+
+# --- Security ---
+# clipboard-paste-protection = true
+# clipboard-paste-bracketed-safe = true
+
+# --- Shell Integration ---
+shell-integration = detect
+
+# --- Keybindings ---
+# Tabs
+# keybind = cmd+t=new_tab
+# keybind = cmd+shift+left=previous_tab
+# keybind = cmd+shift+right=next_tab
+# keybind = cmd+w=close_surface
+
+# Splits
+# keybind = cmd+d=new_split:right
+# keybind = cmd+shift+d=new_split:down
+# keybind = cmd+alt+left=goto_split:left
+# keybind = cmd+alt+right=goto_split:right
+# keybind = cmd+alt+up=goto_split:top
+# keybind = cmd+alt+down=goto_split:bottom
+
+# Font size
+# keybind = cmd+plus=increase_font_size:1
+# keybind = cmd+minus=decrease_font_size:1
+# keybind = cmd+zero=reset_font_size
+
+# Quick terminal global hotkey
+# keybind = global:ctrl+grave_accent=toggle_quick_terminal
+
+# Splits management
+# keybind = cmd+shift+e=equalize_splits
+# keybind = cmd+shift+f=toggle_split_zoom
+
+# Reload config
+# keybind = cmd+shift+comma=reload_config
+
+# --- Performance ---
+# Generous scrollback (25MB)
+scrollback-limit = 25000000
