@@ -126,5 +126,19 @@ function m {
     op run --no-masking -- mutt "$@"
 }
 
+notify-after() {
+  "$@"
+  local exit_code=$?
+  [ -S /tmp/cmux.sock ] || return $exit_code
+  if [ $exit_code -eq 0 ]; then
+    cmux notify --title "✓ Command Complete" --body "$1"
+  else
+    cmux notify --title "✗ Command Failed" --body "$1 (exit $exit_code)"
+  fi
+  return $exit_code
+}
+
+# Usage: notify-after npm run build
+
 # API Keys
 alias openai-training='export OPENAI_API_KEY=$(op read op://devops/openai-training-250920/credential)'
