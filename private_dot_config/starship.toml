@@ -154,6 +154,9 @@ contexts = [
 symbol = " "
 disabled = true
 
+[maven]
+format = ' | [$symbol($version)]($style)'
+
 [memory_usage]
 symbol = "󰍛 "
 
