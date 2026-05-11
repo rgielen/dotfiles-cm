@@ -81,6 +81,9 @@ window-theme = auto
 # cursor-style-blink = true
 # cursor-opacity = 0.8
 
+cursor-style = block
+cursor-style-blink = true
+
 # --- Mouse ---
 mouse-hide-while-typing = true
 copy-on-select = clipboard
@@ -135,5 +138,5 @@ scrollback-limit = 25000000
 
 # Terminal https://ghostty.org/docs/help/terminfo
 
-shell-integration-features = ssh-terminfo,ssh-env
+shell-integration-features = ssh-terminfo,ssh-env,no-cursor
 
