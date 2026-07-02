@@ -137,6 +137,7 @@ disabled = true
 [kotlin]
 symbol = " "
 disabled = false
+format = ' | [${symbol}(${version})]($style)'
 
 [kubernetes]
 disabled = false
@@ -249,6 +250,7 @@ disabled = true
 
 [python]
 symbol = " "
+format = ' | [${symbol}(${version})]($style)'
 
 [rlang]
 symbol = "󰟔 "
