@@ -144,5 +144,7 @@ notify-after() {
 alias openai-training='export OPENAI_API_KEY=$(op read op://devops/openai-training-250920/credential)'
 
 #Tailscale
-alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
-
+if command -v /Applications/Tailscale.app/Contents/MacOS/Tailscale &> /dev/null
+then
+    alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+fi
