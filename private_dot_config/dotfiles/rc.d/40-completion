@@ -64,3 +64,9 @@ fi
 if command -v kubecm &> /dev/null; then
     source <(kubecm completion ${SHELL_TYPE})
 fi
+
+if command -v himalaya &> /dev/null; then
+    himalaya completion -d /tmp/ ${SHELL_TYPE}
+    source /tmp/_himalaya 2>/dev/null
+    rm -f /tmp/_himalaya
+fi
