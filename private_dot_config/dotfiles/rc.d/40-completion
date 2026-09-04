@@ -66,7 +66,7 @@ if command -v kubecm &> /dev/null; then
 fi
 
 if command -v himalaya &> /dev/null; then
-    himalaya completion -d /tmp/ ${SHELL_TYPE}
-    source /tmp/_himalaya 2>/dev/null
+    himalaya completion -d /tmp/ ${SHELL_TYPE} &> /dev/null
+    source /tmp/_himalaya
     rm -f /tmp/_himalaya
 fi
