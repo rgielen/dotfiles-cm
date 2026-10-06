@@ -45,3 +45,11 @@ fi
 if command -v pyenv &>/dev/null; then
   eval "$(pyenv init --path)"
 fi
+
+# Hermes Agent and others — ensure ~/.local/bin is on PATH
+if [ -d "$HOME/.local/bin" ]; then
+    case ":$PATH:" in
+        *":$HOME/.local/bin:"*) ;;
+        *) export PATH="$HOME/.local/bin:$PATH" ;;
+    esac
+fi
