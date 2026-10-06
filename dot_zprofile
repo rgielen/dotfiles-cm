@@ -12,3 +12,8 @@ fi
 if [ -r ~/.orbstack/shell/init.zsh ]; then
     source ~/.orbstack/shell/init.zsh
 fi
+
+# Hermes Agent and others — ensure ~/.local/bin is on PATH
+if [ -d "$HOME/.local/bin" ]; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi
