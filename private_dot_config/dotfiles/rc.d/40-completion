@@ -70,3 +70,8 @@ if command -v himalaya &> /dev/null; then
     source /tmp/_himalaya
     rm -f /tmp/_himalaya
 fi
+
+# tb shell completion
+if command -v tb &> /dev/null; then
+    source <(tb completion ${SHELL_TYPE})
+fi
